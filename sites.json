@@ -1,7 +1,7 @@
 {
   "sites":[
     {
-      "url":"https://www.nytimes.com/games/wordle/index.html"],
+      "url":"https://www.nytimes.com/games/wordle/index.html",
       "name":"Worlde",
       "type":"words"
     },
