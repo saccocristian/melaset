@@ -1,6 +1,9 @@
 branch Guide:<br>
 
-main: branch to deploy <br>
-develop: copy of the actual main<br>
-1.0.0: branch containing all new working features; when it's ready, it will be merged inside main<br>
-other branches: new features; when it's ready, will be merged inside 1.0.0<br>
+main: branch for DEPLOYMENT <br><br>
+
+X.0.0: branch containing the new version of the webiste: once all features are ready create a new X.0.0 and merge it into main <br><br>
+1.0.0: 1st version: accordion style <br>
+2.0.0: 2nd version: new json and js script to separe them<br><br>
+
+New features into new branches!
