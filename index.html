@@ -1,307 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Melaset</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melaset</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
-   </head>
-   <body style="background-color:#212529">
-      <div class="jumbotron text-center bg-dark text-white">
-         <h2>Welcome to melaset! </h2>
-         <p>A mela production, per non annoiarsi mai!</p>
-      </div>
-      <!-- Accordion start -->
-      <div class="accordion accordion-flush " id="accordionFlushExample">
+  <style>
+    /* Additional custom styles can be added here */
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mx-auto" href="https://github.com/cristiansacco/melaset">Melaset</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto mx-5">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="https://www.reddit.com/" target="_blank">Reddit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.spaziocinema.info/cinema" target="_blank">Anteo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.youtube.com/" target="_blank">Youtube</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
 
-         <!-- Accordion item 1: word quizzes -->
-         <div class="accordion-item">
-            <h2 class="accordion-header">
-               <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-               Word quizzes
-               </button>
-            </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Wordle</h5>
-                     <p class="card-text">Guess the word in 5 attempts!</p>
-                     <a href="https://www.nytimes.com/games/wordle/index.html
-                        " target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Parle</h5>
-                     <p class="card-text">Indovina la parola in 5 tentativi!</p>
-                     <a href="https://pietroppeter.github.io/wordle-it/" target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Waffle game</h5>
-                     <p class="card-text">Crossed words puzzle</p>
-                     <a href="https://wafflegame.net/daily" target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- End Accordion item 1-->
+  <div id="buttonContainer" class="container">
+    <!-- Buttons will be dynamically added here -->
+  </div>
 
-         <!-- Accordion item 2: geo quizzes -->
-         <div class="accordion-item">
-            <h2 class="accordion-header">
-               <button class="accordion-button collapsed bg-dark-subtle text-emphasis-dark"
-               type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-               Geo quizzes
-               </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Worldle</h5>
-                     <p class="card-text">Guess the country!</p>
-                     <a href="https://worldle.teuteuf.fr/"
-                        target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Globle</h5>
-                     <p class="card-text">Guess the country!</p>
-                     <a href="https://globle-game.com/"
-                        target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Globle: capitals</h5>
-                     <p class="card-text">Guess the capital</p>
-                     <a href="https://globle-capitals.com/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Where taken</h5>
-                     <p class="card-text">Guess the country with a photo!</p>
-                     <a href="https://wheretaken.teuteuf.fr/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Guess the dest</h5>
-                     <p class="card-text">Guess the word in a different way</p>
-                     <a href="https://intelli.travel/game/?ref=actorle_footer
-                        " target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Border Cross</h5>
-                     <p class="card-text">Guess the travel between two countries</p>
-                     <a href="https://intelli.travel/border-cross/
-                        " target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- End accordion item 2 -->
+  <!-- Include Bootstrap JS (if required) -->
+  <!-- Your JavaScript code for button management -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('sites.json')
+        .then(response => response.json())
+        .then(data => {
+          const buttonContainer = document.getElementById('buttonContainer');
 
-         <!-- Accordion item 3: movies and series quizzes -->
-         <div class="accordion-item">
-            <h2 class="accordion-header">
-               <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-               Movies & Series quizzes
-               </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Framed</h5>
-                     <p class="card-text">Guess the movie with frames of it!</p>
-                     <a href="https://framed.wtf/"
-                        target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Fliktok movies</h5>
-                     <p class="card-text">Guess the movie with frames of it!</p>
-                     <a href="https://fliktok.app/"
-                        target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Episode</h5>
-                     <p class="card-text">Guess the series with frames of it! (weekly game)</p>
-                     <a href="https://episode.wtf/"
-                        target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Fliktok series</h5>
-                     <p class="card-text">Guess the series with frames of it! (weekly game)</p>
-                     <a href="https://fliktok.show/"
-                        target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Actorle</h5>
-                     <p class="card-text">Guess the actor/actress with the given info</p>
-                     <a href="https://actorle.com/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Moviedle</h5>
-                     <p class="card-text">Guess the movie with the given info</p>
-                     <a href="https://moviedle.xyz/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Moviedle Emojis</h5>
-                     <p class="card-text">Guess the movie with the given emojis</p>
-                     <a href="https://moviedle.xyz/moviemoji/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Box office game</h5>
-                     <p class="card-text">Guess the movies of a box office's week</p>
-                     <a href="https://boxofficega.me/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- End accordion item 3 -->
+          // Group sites by type
+          const types = {};
+          data.forEach(site => {
+            if (!types[site.type]) {
+              types[site.type] = [];
+            }
+            types[site.type].push(site);
+          });
 
-         <!-- Accordion item 4: music quizzes -->
-         <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed bg-dark-subtle text-emphasis-dark" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFour">
-               Music Quizzes
-               </button>
-            </h2>
-            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-              <!-- List element -->
-              <div class="card">
-                 <div class="card-body">
-                    <h5 class="card-title">Guess the song</h5>
-                    <p class="card-text">Guess the song!</p>
-                    <a href="https://guesstheaudio.com/"
-                       target ="_blank" class="btn btn-primary">Link</a>
-                 </div>
-              </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Heardle ITA</h5>
-                     <p class="card-text">Guess the song! (ita version)</p>
-                     <a href="https://heardle.it/
-                        " target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Songl.io</h5>
-                     <p class="card-text">Guess the song!</p>
-                     <a href="https://songl.io/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- End Accordion item 4-->
+          // Create buttons for each type
+          for (const type in types) {
+            const typeGroup = types[type];
+            const typeDiv = document.createElement('div');
+            typeDiv.classList.add('type-group', 'col-12', 'text-center','my-2');
+            const newType = type.charAt(0).toUpperCase() + type.slice(1);
+            typeDiv.innerHTML = `<h2>${newType}</h2>`;
+            buttonContainer.appendChild(typeDiv); // Add type header before buttons
 
-         <!-- Accordion item 5: misc quizzes -->
-         <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseThree">
-               Misc quizzes
-               </button>
-            </h2>
-            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Animedle</h5>
-                     <p class="card-text">Guess the anime!</p>
-                     <a href="https://animedle.io/
-                        " target ="_blank"  class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">GuessTheGame</h5>
-                     <p class="card-text">Guess the game!</p>
-                     <a href="https://guessthe.game/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Timeguessr</h5>
-                     <p class="card-text">Guess the place and year of the photo</p>
-                     <a href="https://timeguessr.com/
-                        " target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">trainwrecklabs</h5>
-                     <p class="card-text">Misc stuff!</p>
-                     <a href="https://trainwrecklabs.com/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
-               <!-- List element -->
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Neal Fun</h5>
-                     <p class="card-text">Random stuff!</p>
-                     <a href="https://neal.fun/"
-                        target ="_blank" class="btn btn-primary">Link</a>
-                  </div>
-               </div>
+            let rowDiv; // Initialize rowDiv variable
 
-            </div>
-         </div>
-         <!-- End Accordion item 5-->
-
-
-
-         <!-- Accordion end -->
-      </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-   </body>
+            // Create buttons for the current type
+            typeGroup.forEach((site, index) => {
+              if (index % 3 === 0) {
+                // Start a new row for every third button
+                rowDiv = document.createElement('div');
+                rowDiv.classList.add('button-row', 'row', 'justify-content-center');
+                typeDiv.appendChild(rowDiv);
+              }
+              const button = document.createElement('button');
+              button.textContent = site.name;
+              button.classList.add('btn', 'btn-outline-dark', 'btn-lg','mx-2', 'my-2','col-3','custom-btn-size');
+              button.addEventListener('click', function() {
+                window.open(site.url,"_blank");
+              });
+              rowDiv.appendChild(button); // Append button to the row
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    });
+  </script>
+  <style>
+    .custom-btn-size{
+      min-width: 150px;
+      font-size:100%;
+      text-align: center;
+    }
+  </style>
+</body>
 </html>
