@@ -1,7 +1,6 @@
-{
-  "sites":[
+[
     {
-      "url":"https://www.nytimes.com/games/wordle/index.html"],
+      "url":"https://www.nytimes.com/games/wordle/index.html",
       "name":"Worlde",
       "type":"words"
     },
@@ -11,7 +10,7 @@
       "type":"words"
     },
     {
-      "url":"https://wafflegame.net/daily"
+      "url":"https://wafflegame.net/daily",
       "name":"Waffle game",
       "type":"words"
     },
@@ -73,12 +72,12 @@
     {
       "url":"https://episode.wtf/",
       "name":"Episode",
-      "type":"series"
+      "type":"movies"
     },
     {
       "url":"https://fliktok.show/",
       "name":"Fliktok Series",
-      "type":"series"
+      "type":"movies"
     },
     {
       "url":"https://actorle.com/",
@@ -131,4 +130,3 @@
       "type":"games"
     }
   ]
-}
