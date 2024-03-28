@@ -31,7 +31,7 @@
     },
     {
       "url":"https://wheretaken.teuteuf.fr/",
-      "name":"wheretaken",
+      "name":"Wheretaken",
       "type":"geo"
     },
     {
@@ -107,26 +107,26 @@
     {
       "url":"https://guesstheaudio.com/",
       "name":"Guess The Audio",
-      "type":"audio"
+      "type":"misc"
     },
     {
       "url":"https://animedle.io/",
       "name":"Animedle",
-      "type":"anime"
+      "type":"misc"
     },
     {
       "url":"https://guessthe.game/",
       "name":"Guess The Game",
-      "type":"games"
+      "type":"misc"
     },
     {
       "url":"https://squirdle.fireblend.com/daily.html",
       "name":"Squirdle",
-      "type":"games"
+      "type":"misc"
     },
     {
       "url":"https://neal.fun/",
       "name":"Neal Fun",
-      "type":"games"
+      "type":"misc"
     }
   ]

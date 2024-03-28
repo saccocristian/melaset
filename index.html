@@ -6,6 +6,8 @@
   <title>Melaset</title>
   <!-- Include Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
   <style>
     /* Additional custom styles can be added here */
   </style>
@@ -36,8 +38,6 @@
   </div>
 
   <!-- Include Bootstrap JS (if required) -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
   <!-- Your JavaScript code for button management -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -59,8 +59,9 @@
           for (const type in types) {
             const typeGroup = types[type];
             const typeDiv = document.createElement('div');
-            typeDiv.classList.add('type-group', 'col-12', 'text-center', 'mb-4','my-2');
-            typeDiv.innerHTML = `<h2>${type}</h2>`;
+            typeDiv.classList.add('type-group', 'col-12', 'text-center','my-2');
+            const newType = type.charAt(0).toUpperCase() + type.slice(1);
+            typeDiv.innerHTML = `<h2>${newType}</h2>`;
             buttonContainer.appendChild(typeDiv); // Add type header before buttons
 
             let rowDiv; // Initialize rowDiv variable
@@ -75,7 +76,7 @@
               }
               const button = document.createElement('button');
               button.textContent = site.name;
-              button.classList.add('btn', 'btn-outline-dark', 'btn-lg','mx-2', 'my-2','col-3');
+              button.classList.add('btn', 'btn-outline-dark', 'btn-lg','mx-2', 'my-2','col-3','custom-btn-size');
               button.addEventListener('click', function() {
                 window.open(site.url,"_blank");
               });
@@ -89,9 +90,11 @@
     });
   </script>
   <style>
-    .row btn{
-        width:100px;
-        }
+    .custom-btn-size{
+      min-width: 150px;
+      font-size:100%;
+      text-align: center;
+    }
   </style>
 </body>
 </html>
