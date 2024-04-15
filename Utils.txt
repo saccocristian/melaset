@@ -1,0 +1,3 @@
+
+Execute page from localhost:
+$python3 -m http.server
