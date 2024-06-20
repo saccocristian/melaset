@@ -35,21 +35,6 @@
       "type":"geo"
     },
     {
-      "url":"https://intelli.travel/game/",
-      "name":"IntelliTravel",
-      "type":"geo"
-    },
-    {
-      "url":"https://intelli.travel/border-cross/",
-      "name":"Border Cross",
-      "type":"geo"
-    },
-    {
-      "url":"https://statele.teuteuf.fr/",
-      "name":"Statele",
-      "type":"geo"
-    },
-    {
       "url":"https://timeguessr.com/",
       "name":"Timeguessr",
       "type":"history"
@@ -117,16 +102,46 @@
     {
       "url":"https://guessthe.game/",
       "name":"Guess The Game",
-      "type":"misc"
+      "type":"games"
     },
     {
       "url":"https://squirdle.fireblend.com/daily.html",
       "name":"Squirdle",
-      "type":"misc"
+      "type":"games"
     },
     {
       "url":"https://neal.fun/",
       "name":"Neal Fun",
+      "type":"misc"
+    },
+    {
+      "url":"https://movietomovie.com/",
+      "name":"MovieToMovie",
+      "type":"movies"
+    },
+        {
+      "url":"https://www.gamedle.wtf/classic?lang=it#",
+      "name":"gamedle",
+      "type":"games"
+    },
+        {
+      "url":"https://www.foodguessr.com/",
+      "name":"FoodGuessr",
+      "type":"misc"
+    },
+    {
+      "url":"https://pokedoku.com/",
+      "name":"Pokedoku",
+      "type":"games"
+    },
+    {
+      "url":"https://thrice.geekswhodrink.com/",
+      "name":"Thrice",
+      "type":"misc"
+    },
+    {
+      "url":"https://bandle.app/",
+      "name":"Bandle",
       "type":"misc"
     }
   ]
