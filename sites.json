@@ -143,5 +143,10 @@
       "url":"https://bandle.app/",
       "name":"Bandle",
       "type":"misc"
+    },
+    {
+      "url":"https://acted.wtf/",
+      "name":"Acted",
+      "type":"movies"
     }
   ]
