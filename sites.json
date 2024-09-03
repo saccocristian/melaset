@@ -85,11 +85,6 @@
       "type":"movies"
     },
     {
-      "url":"https://emovi.teuteuf.fr/",
-      "name":"Emovi",
-      "type":"movies"
-    },
-    {
       "url":"https://guesstheaudio.com/",
       "name":"Guess The Audio",
       "type":"misc"
@@ -120,7 +115,7 @@
       "type":"movies"
     },
         {
-      "url":"https://www.gamedle.wtf/classic?lang=it#",
+      "url":"https://www.gamedle.wtf/",
       "name":"gamedle",
       "type":"games"
     },
@@ -148,5 +143,45 @@
       "url":"https://acted.wtf/",
       "name":"Acted",
       "type":"movies"
+    },
+    {
+      "url":"www.dailydozentrivia.com",
+      "name":"DailyDozenTrivia",
+      "type":"misc"
+    },
+    {
+      "url":"www.nytimes.com/games/connections",
+      "name":"NY times: Connections",
+      "type":"words"
+    },
+    {
+      "url":"www.costcodle.com",
+      "name":"Costcodle",
+      "type":"misc"
+    },
+    {
+      "url":"www.travle.earth",
+      "name":"Travle",
+      "type":"geo"
+    },
+    {
+      "url":"www.moviegrid.io",
+      "name":"Moviegrid",
+      "type":"movies"
+    },
+    {
+      "url":"www.spellcheckgame.com",
+      "name":"Spellcheckgame",
+      "type":"words"
+    },
+    {
+      "url":"www.relatle.io",
+      "name":"Relatle",
+      "type":"misc"
+    },
+    {
+      "url":"www.playdisorderly.com",
+      "name":"Disorderly",
+      "type":"misc"
     }
   ]
