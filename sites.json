@@ -145,42 +145,42 @@
       "type":"movies"
     },
     {
-      "url":"www.dailydozentrivia.com",
+      "url":"https://dailydozentrivia.com",
       "name":"DailyDozenTrivia",
       "type":"misc"
     },
     {
-      "url":"www.nytimes.com/games/connections",
+      "url":"https://nytimes.com/games/connections",
       "name":"NY times: Connections",
       "type":"words"
     },
     {
-      "url":"www.costcodle.com",
+      "url":"https://costcodle.com",
       "name":"Costcodle",
       "type":"misc"
     },
     {
-      "url":"www.travle.earth",
+      "url":"https://travle.earth",
       "name":"Travle",
       "type":"geo"
     },
     {
-      "url":"www.moviegrid.io",
+      "url":"https://moviegrid.io",
       "name":"Moviegrid",
       "type":"movies"
     },
     {
-      "url":"www.spellcheckgame.com",
+      "url":"https://spellcheckgame.com",
       "name":"Spellcheckgame",
       "type":"words"
     },
     {
-      "url":"www.relatle.io",
+      "url":"https://relatle.io",
       "name":"Relatle",
       "type":"misc"
     },
     {
-      "url":"www.playdisorderly.com",
+      "url":"https://playdisorderly.com",
       "name":"Disorderly",
       "type":"misc"
     }
