@@ -55,7 +55,7 @@
           for (const type in types) {
             const typeGroup = types[type];
             const typeDiv = document.createElement('div');
-            typeDiv.classList.add('type-group', 'col-10', 'text-center','my-2');
+            typeDiv.classList.add('type-group', 'text-center','my-2');
             const newType = type.charAt(0).toUpperCase() + type.slice(1);
             typeDiv.innerHTML = `<h5>${newType}</h5>`;
             buttonContainer.appendChild(typeDiv); // Add type header before buttons
