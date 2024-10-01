@@ -90,11 +90,6 @@
       "type":"misc"
     },
     {
-      "url":"https://animedle.io/",
-      "name":"Animedle",
-      "type":"misc"
-    },
-    {
       "url":"https://guessthe.game/",
       "name":"Guess The Game",
       "type":"games"
@@ -116,7 +111,7 @@
     },
         {
       "url":"https://www.gamedle.wtf/",
-      "name":"gamedle",
+      "name":"Gamedle",
       "type":"games"
     },
         {
@@ -145,11 +140,6 @@
       "type":"movies"
     },
     {
-      "url":"https://dailydozentrivia.com",
-      "name":"DailyDozenTrivia",
-      "type":"misc"
-    },
-    {
       "url":"https://nytimes.com/games/connections",
       "name":"NY times: Connections",
       "type":"words"
@@ -173,11 +163,6 @@
       "url":"https://spellcheckgame.com",
       "name":"Spellcheckgame",
       "type":"words"
-    },
-    {
-      "url":"https://relatle.io",
-      "name":"Relatle",
-      "type":"misc"
     },
     {
       "url":"https://playdisorderly.com",
