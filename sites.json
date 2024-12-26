@@ -11,7 +11,7 @@
     },
     {
       "url":"https://wafflegame.net/daily",
-      "name":"Waffle game",
+      "name":"Waffle",
       "type":"words"
     },
     {
@@ -33,16 +33,6 @@
       "url":"https://wheretaken.teuteuf.fr/",
       "name":"Wheretaken",
       "type":"geo"
-    },
-    {
-      "url":"https://timeguessr.com/",
-      "name":"Timeguessr",
-      "type":"history"
-    },
-    {
-      "url":"https://whentaken.com/game",
-      "name":"WhenTaken",
-      "type":"history"
     },
     {
       "url":"https://framed.wtf/",
@@ -84,6 +74,16 @@
       "name":"Box Office",
       "type":"movies"
     },
+        {
+      "url":"https://timeguessr.com/",
+      "name":"Timeguessr",
+      "type":"misc"
+    },
+    {
+      "url":"https://whentaken.com/game",
+      "name":"WhenTaken",
+      "type":"misc"
+    },
     {
       "url":"https://guesstheaudio.com/",
       "name":"Guess The Audio",
@@ -98,11 +98,6 @@
       "url":"https://squirdle.fireblend.com/daily.html",
       "name":"Squirdle",
       "type":"games"
-    },
-    {
-      "url":"https://neal.fun/",
-      "name":"Neal Fun",
-      "type":"misc"
     },
     {
       "url":"https://movietomovie.com/",
@@ -145,11 +140,6 @@
       "type":"words"
     },
     {
-      "url":"https://costcodle.com",
-      "name":"Costcodle",
-      "type":"misc"
-    },
-    {
       "url":"https://travle.earth",
       "name":"Travle",
       "type":"geo"
@@ -163,10 +153,5 @@
       "url":"https://spellcheckgame.com",
       "name":"Spellcheckgame",
       "type":"words"
-    },
-    {
-      "url":"https://playdisorderly.com",
-      "name":"Disorderly",
-      "type":"misc"
     }
   ]
