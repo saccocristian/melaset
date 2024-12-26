@@ -104,12 +104,12 @@
       "name":"MovieToMovie",
       "type":"movies"
     },
-        {
+    {
       "url":"https://www.gamedle.wtf/",
       "name":"Gamedle",
       "type":"games"
     },
-        {
+    {
       "url":"https://www.foodguessr.com/",
       "name":"FoodGuessr",
       "type":"misc"
@@ -147,6 +147,11 @@
     {
       "url":"https://moviegrid.io",
       "name":"Moviegrid",
+      "type":"movies"
+    },
+    {
+      "url":"https://movizzle.com/",
+      "name":"Movizzle",
       "type":"movies"
     },
     {
