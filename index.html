@@ -8,6 +8,8 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- PapaParse per leggere CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <link rel="icon" type="image/x-icon" href="images/pepe.ico">
 
 </head>
@@ -32,18 +34,24 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      fetch('sites.json')
-        .then(response => response.json())
-        .then(data => {
+      // SOSTITUZIONE: leggiamo sites.csv invece di sites.json
+      Papa.parse('sites.csv', {
+        download: true,
+        header: true, // usa la prima riga (url,name,type) come intestazioni
+        complete: function(results) {
+          const data = results.data;
           const buttonContainer = document.getElementById('buttonContainer');
 
           // Group sites by type
           const types = {};
           data.forEach(site => {
-            if (!types[site.type]) {
-              types[site.type] = [];
+            // salta eventuali righe vuote/iniziali
+            if (site && site.url && site.name && site.type) {
+              if (!types[site.type]) {
+                types[site.type] = [];
+              }
+              types[site.type].push(site);
             }
-            types[site.type].push(site);
           });
 
           // Create buttons for each type
@@ -60,7 +68,7 @@
             // Create buttons for the current type
             typeGroup.forEach((site, index) => {
               if (index % 5 === 0) {
-                // Start a new row for every third button
+                // Start a new row for every fifth button
                 rowDiv = document.createElement('div');
                 rowDiv.classList.add('button-row', 'row', 'justify-content-center');
                 typeDiv.appendChild(rowDiv);
@@ -74,10 +82,11 @@
               rowDiv.appendChild(button); // Append button to the row
             });
           }
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
+        },
+        error: function(error) {
+          console.error('Error parsing CSV:', error);
+        }
+      });
     });
   </script>
   <style>
