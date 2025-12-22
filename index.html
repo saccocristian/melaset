@@ -24,10 +24,16 @@
   </nav>
 
   <!-- Main -->
-  <div class="container-fluid px-3 py-3">
+  <div class="main-wrapper py-3">
     <div class="topbar mb-3">
       <h3 class="m-0">Melaset</h3>
-      <input id="search" class="form-control form-control-sm search" placeholder="Cerca un gioco o categoria..." />
+
+      <!-- Toggle: nascondi visitati -->
+      <label class="toggle-wrap" title="Nascondi i pulsanti già cliccati oggi">
+        <input id="hideVisited" type="checkbox" />
+        <span class="toggle-ui"></span>
+        <span class="toggle-text">Nascondi visitati</span>
+      </label>
     </div>
 
     <div id="buttonContainer"></div>
@@ -40,6 +46,13 @@
       color: #ffffff;
     }
 
+    /* layout centrato */
+    .main-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     .topbar {
       display: flex;
       gap: 12px;
@@ -48,35 +61,73 @@
       flex-wrap: wrap;
     }
 
-    .search {
-      max-width: 320px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #fff;
+    /* Toggle minimal */
+    .toggle-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+      margin: 0;
     }
 
-    .search::placeholder {
-      color: rgba(255, 255, 255, 0.55);
+    .toggle-text {
+      font-size: 0.95rem;
+      opacity: 0.9;
     }
 
-    /* === SEZIONI: minimal con accent per categoria === */
+    .toggle-wrap input {
+      display: none;
+    }
+
+    .toggle-ui {
+      width: 44px;
+      height: 24px;
+      border-radius: 999px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .toggle-ui::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 3px;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.85);
+      transition: left 0.15s ease;
+    }
+
+    .toggle-wrap input:checked + .toggle-ui {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.30);
+    }
+
+    .toggle-wrap input:checked + .toggle-ui::after {
+      left: 22px;
+    }
+
+    /* === SEZIONI === */
     .section {
       margin: 18px 0 26px;
       padding: 14px 14px 18px;
       border-radius: 14px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
 
-      border-color: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.25)) 35%, rgba(255, 255, 255, 0.08));
-      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.15)) 18%, transparent);
+      border-color: color-mix(in srgb, var(--accent, #fff) 35%, rgba(255, 255, 255, 0.08));
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, #fff) 18%, transparent);
     }
 
     .section-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 10px;
       margin-bottom: 12px;
     }
 
@@ -84,26 +135,24 @@
       margin: 0;
       font-size: 1.05rem;
       letter-spacing: 0.5px;
-      opacity: 0.95;
     }
 
     .badge-count {
       font-size: 0.8rem;
       padding: 3px 10px;
       border-radius: 999px;
-      border: 1px solid color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.25)) 45%, rgba(255, 255, 255, 0.18));
-      background: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.25)) 12%, rgba(255, 255, 255, 0.05));
-      opacity: 0.95;
+      border: 1px solid color-mix(in srgb, var(--accent, #fff) 45%, rgba(255, 255, 255, 0.18));
+      background: color-mix(in srgb, var(--accent, #fff) 12%, rgba(255, 255, 255, 0.05));
     }
 
-    /* Grid responsive */
+    /* Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 12px;
     }
 
-    /* Card link */
+    /* Tile */
     .tile {
       display: flex;
       align-items: center;
@@ -115,7 +164,6 @@
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: rgba(0, 0, 0, 0.15);
       transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
-      user-select: none;
       text-align: center;
       font-size: clamp(0.85rem, 1.8vw, 1rem);
       white-space: nowrap;
@@ -125,8 +173,20 @@
 
     .tile:hover {
       transform: translateY(-2px);
-      background: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.20)) 10%, rgba(255, 255, 255, 0.06));
-      border-color: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.35)) 45%, rgba(255, 255, 255, 0.35));
+      background: color-mix(in srgb, var(--accent, #fff) 10%, rgba(255, 255, 255, 0.06));
+      border-color: color-mix(in srgb, var(--accent, #fff) 45%, rgba(255, 255, 255, 0.35));
+    }
+
+    /* Tile cliccata */
+    .tile.active {
+      background: color-mix(in srgb, var(--accent, #fff) 18%, rgba(0, 0, 0, 0.25));
+      border-color: var(--accent, #fff);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, #fff) 45%, transparent);
+    }
+
+    /* Nascondi visitati */
+    .tile.is-hidden {
+      display: none !important;
     }
 
     @media (max-width: 420px) {
@@ -139,46 +199,61 @@
   <!-- Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      let allSites = [];
 
-      // Accent colors per categoria (type in lowercase dal CSV)
+      /* === RESET A MEZZANOTTE === */
+      const todayKey = new Date().toISOString().slice(0, 10);
+      const storedDay = localStorage.getItem("melaset-day");
+
+      if (storedDay !== todayKey) {
+        localStorage.removeItem("melaset-clicked");
+        localStorage.removeItem("melaset-hideVisited");
+        localStorage.setItem("melaset-day", todayKey);
+      }
+
+      const clicked = new Set(
+        JSON.parse(localStorage.getItem("melaset-clicked") || "[]")
+      );
+
+      /* Toggle: nascondi visitati (persistente) */
+      const hideVisitedToggle = document.getElementById("hideVisited");
+      const savedHide = localStorage.getItem("melaset-hideVisited");
+      hideVisitedToggle.checked = savedHide === "1";
+
+      hideVisitedToggle.addEventListener("change", () => {
+        localStorage.setItem("melaset-hideVisited", hideVisitedToggle.checked ? "1" : "0");
+        applyHideVisited();
+      });
+
+      /* Accent per categoria */
       const ACCENTS = {
-        words: "#ff9f1c",   // arancione
-        geo: "#2ecc71",     // verde
-        movies: "#9b5de5",  // viola
-        music: "#4cc9f0",   // azzurro
-        games: "#ff4d6d",   // rosa/rosso
-        news: "#f4d35e",    // giallo soft
-        tools: "#a0aec0"    // grigio
+        words: "#ff9f1c",
+        geo: "#2ecc71",
+        movies: "#9b5de5",
+        music: "#4cc9f0",
+        games: "#ff4d6d",
+        news: "#f4d35e",
+        tools: "#a0aec0"
       };
+
+      let allSites = [];
 
       Papa.parse("sites.csv", {
         download: true,
         header: true,
         complete: function (results) {
           allSites = (results.data || [])
-            .filter((s) => s && s.url && s.name && s.type)
-            .map((s) => ({
+            .filter(s => s && s.url && s.name && s.type)
+            .map(s => ({
               url: s.url.trim(),
               name: s.name.trim(),
-              type: s.type.trim().toLowerCase(),
+              type: s.type.trim().toLowerCase()
             }));
 
           render(allSites);
-
-          document.getElementById("search").addEventListener("input", function () {
-            const q = this.value.trim().toLowerCase();
-            const filtered = allSites.filter(
-              (s) =>
-                s.name.toLowerCase().includes(q) ||
-                s.type.toLowerCase().includes(q)
-            );
-            render(filtered);
-          });
         },
         error: function (err) {
           console.error("CSV error:", err);
-        },
+        }
       });
 
       function render(data) {
@@ -186,43 +261,66 @@
         container.innerHTML = "";
 
         const groups = {};
-        data.forEach((s) => (groups[s.type] ||= []).push(s));
+        data.forEach(s => (groups[s.type] ||= []).push(s));
 
-        // ✅ ordine invertito delle categorie
-        Object.keys(groups)
-          .sort()
-          .reverse()
-          .forEach((type) => {
-            const section = document.createElement("div");
-            section.className = "section";
+        // ordine categorie inverso
+        Object.keys(groups).sort().reverse().forEach(type => {
+          const section = document.createElement("div");
+          section.className = "section";
+          section.style.setProperty("--accent", ACCENTS[type] || "#ffffff");
 
-            // ✅ accent per categoria
-            section.style.setProperty("--accent", ACCENTS[type] || "#ffffff");
+          section.innerHTML = `
+            <div class="section-header">
+              <h5 class="section-title">${type.charAt(0).toUpperCase() + type.slice(1)}</h5>
+              <span class="badge-count">${groups[type].length}</span>
+            </div>
+            <div class="grid"></div>
+          `;
 
-            const title = type.charAt(0).toUpperCase() + type.slice(1);
+          const grid = section.querySelector(".grid");
 
-            section.innerHTML = `
-              <div class="section-header">
-                <h5 class="section-title">${title}</h5>
-                <span class="badge-count">${groups[type].length}</span>
-              </div>
-              <div class="grid"></div>
-            `;
+          groups[type].forEach(site => {
+            const a = document.createElement("a");
+            a.className = "tile";
+            a.href = site.url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.textContent = site.name;
 
-            const grid = section.querySelector(".grid");
+            const id = `${site.type}::${site.name}`;
+            a.dataset.siteId = id;
 
-            groups[type].forEach((site) => {
-              const a = document.createElement("a");
-              a.className = "tile";
-              a.href = site.url;
-              a.target = "_blank";
-              a.rel = "noopener noreferrer";
-              a.textContent = site.name;
-              grid.appendChild(a);
+            if (clicked.has(id)) a.classList.add("active");
+
+            a.addEventListener("click", () => {
+              clicked.add(id);
+              localStorage.setItem("melaset-clicked", JSON.stringify([...clicked]));
+              a.classList.add("active");
+              applyHideVisited(); // se toggle attivo, nascondilo subito
             });
 
-            container.appendChild(section);
+            grid.appendChild(a);
           });
+
+          container.appendChild(section);
+        });
+
+        applyHideVisited();
+      }
+
+      function applyHideVisited() {
+        const hide = hideVisitedToggle.checked;
+        document.querySelectorAll(".tile").forEach(tile => {
+          const id = tile.dataset.siteId;
+          const isVisited = clicked.has(id);
+          tile.classList.toggle("is-hidden", hide && isVisited);
+        });
+
+        // Se una sezione rimane senza tile visibili, la nascondiamo
+        document.querySelectorAll(".section").forEach(section => {
+          const anyVisible = section.querySelector(".tile:not(.is-hidden)");
+          section.style.display = anyVisible ? "" : "none";
+        });
       }
     });
   </script>
