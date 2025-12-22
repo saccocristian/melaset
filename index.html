@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Melaset</title>
 
-  <!-- Bootstrap (solo CSS, JS non necessario) -->
-  <link
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <!-- Bootstrap (solo CSS) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- PapaParse -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
@@ -21,25 +18,16 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark">
-    <a
-      class="navbar-brand mx-auto"
-      href="https://github.com/cristiansacco/melaset"
-      target="_blank"
-    >
+    <a class="navbar-brand mx-auto" href="https://github.com/cristiansacco/melaset" target="_blank" rel="noopener">
       Melaset – GitHub
     </a>
   </nav>
 
   <!-- Main -->
   <div class="container-fluid px-3 py-3">
-
     <div class="topbar mb-3">
       <h3 class="m-0">Melaset</h3>
-      <input
-        id="search"
-        class="form-control form-control-sm search"
-        placeholder="Cerca un gioco o categoria..."
-      />
+      <input id="search" class="form-control form-control-sm search" placeholder="Cerca un gioco o categoria..." />
     </div>
 
     <div id="buttonContainer"></div>
@@ -71,13 +59,17 @@
       color: rgba(255, 255, 255, 0.55);
     }
 
+    /* === SEZIONI: minimal con accent per categoria === */
     .section {
       margin: 18px 0 26px;
       padding: 14px 14px 18px;
       border-radius: 14px;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(6px);
+      position: relative;
+
+      border-color: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.25)) 35%, rgba(255, 255, 255, 0.08));
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.15)) 18%, transparent);
     }
 
     .section-header {
@@ -99,18 +91,19 @@
       font-size: 0.8rem;
       padding: 3px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.05);
-      opacity: 0.9;
+      border: 1px solid color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.25)) 45%, rgba(255, 255, 255, 0.18));
+      background: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.25)) 12%, rgba(255, 255, 255, 0.05));
+      opacity: 0.95;
     }
 
-    /* Responsive grid */
+    /* Grid responsive */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 12px;
     }
 
+    /* Card link */
     .tile {
       display: flex;
       align-items: center;
@@ -121,8 +114,7 @@
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.18);
       background: rgba(0, 0, 0, 0.15);
-      transition: transform 0.12s ease, background 0.12s ease,
-        border-color 0.12s ease;
+      transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
       user-select: none;
       text-align: center;
       font-size: clamp(0.85rem, 1.8vw, 1rem);
@@ -133,8 +125,8 @@
 
     .tile:hover {
       transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.35);
+      background: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.20)) 10%, rgba(255, 255, 255, 0.06));
+      border-color: color-mix(in srgb, var(--accent, rgba(255, 255, 255, 0.35)) 45%, rgba(255, 255, 255, 0.35));
     }
 
     @media (max-width: 420px) {
@@ -148,6 +140,17 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       let allSites = [];
+
+      // Accent colors per categoria (type in lowercase dal CSV)
+      const ACCENTS = {
+        words: "#ff9f1c",   // arancione
+        geo: "#2ecc71",     // verde
+        movies: "#9b5de5",  // viola
+        music: "#4cc9f0",   // azzurro
+        games: "#ff4d6d",   // rosa/rosso
+        news: "#f4d35e",    // giallo soft
+        tools: "#a0aec0"    // grigio
+      };
 
       Papa.parse("sites.csv", {
         download: true,
@@ -163,18 +166,15 @@
 
           render(allSites);
 
-          document
-            .getElementById("search")
-            .addEventListener("input", function () {
-              const q = this.value.toLowerCase();
-              render(
-                allSites.filter(
-                  (s) =>
-                    s.name.toLowerCase().includes(q) ||
-                    s.type.toLowerCase().includes(q)
-                )
-              );
-            });
+          document.getElementById("search").addEventListener("input", function () {
+            const q = this.value.trim().toLowerCase();
+            const filtered = allSites.filter(
+              (s) =>
+                s.name.toLowerCase().includes(q) ||
+                s.type.toLowerCase().includes(q)
+            );
+            render(filtered);
+          });
         },
         error: function (err) {
           console.error("CSV error:", err);
@@ -188,6 +188,7 @@
         const groups = {};
         data.forEach((s) => (groups[s.type] ||= []).push(s));
 
+        // ✅ ordine invertito delle categorie
         Object.keys(groups)
           .sort()
           .reverse()
@@ -195,8 +196,10 @@
             const section = document.createElement("div");
             section.className = "section";
 
-            const title =
-              type.charAt(0).toUpperCase() + type.slice(1);
+            // ✅ accent per categoria
+            section.style.setProperty("--accent", ACCENTS[type] || "#ffffff");
+
+            const title = type.charAt(0).toUpperCase() + type.slice(1);
 
             section.innerHTML = `
               <div class="section-header">
