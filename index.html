@@ -190,6 +190,7 @@
 
         Object.keys(groups)
           .sort()
+          .reverse()
           .forEach((type) => {
             const section = document.createElement("div");
             section.className = "section";
